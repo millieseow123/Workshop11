@@ -3,8 +3,10 @@ package sg.edu.nus.iss.workshop11;
 import org.springframework.boot.DefaultApplicationArguments;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 import java.util.List;
 import java.util.Collections;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,7 +24,7 @@ public class Workshop11Application {
 		SpringApplication.run(Workshop11Application.class, args);
 
 		DefaultApplicationArguments appArgs = new DefaultApplicationArguments(args);
-		List optVals = appArgs.getOptionValues("port");
+		List<String> optVals = appArgs.getOptionValues("port");
 		logger.info("optVals > " + optVals);
 		if(optVals == null || optVals.get(0) == null){
 			portNumber = System.getProperty("PORT", DEFAULT_PORT_NUMBER);
